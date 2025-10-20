@@ -1,6 +1,7 @@
 {
-    "name": "phpexperts/chatgpt-speaker",
-    "description": "A quick and easy extension for effortlessly handling OpenAI's API for ChatGPT.",
+    "name": "autonomo/ai-speaker",
+    "version": "1.0.0",
+    "description": "A quick and easy extension for effortlessly handling many LLM APIs",
     "keywords": [
         "chatgpt",
         "openai",
@@ -8,24 +9,25 @@
         "gpt4",
         "api"
     ],
-    "homepage": "https://www.phpexperts.pro/",
-    "license": "MIT",
+    "homepage": "https://www.autonomous.codes/",
+    "license": "cc-by-nc-4.0",
     "authors": [
         {
-            "name": "PHP Experts, Inc.",
-            "homepage": "https://www.phpexperts.pro/"
+            "name": "Autonomous Programming, LLC.",
+            "homepage": "https://www.autonomous.codes/"
         },
         {
             "name": "Theodore R. Smith",
-            "homepage": "https://www.linkedin.com/in/hopeseekr"
+            "homepage": "https://www.linkedin.com/in/tedrsmith"
         }
     ],
     "require": {
-        "php": ">=7.4",
+        "php": ">=8.0",
         "ext-curl": "*",
         "ext-json": "*",
-        "phpexperts/rest-speaker": "^2.5",
-        "phpexperts/simple-dto": "^3.5"
+        "phpexperts/rest-speaker": "*",
+        "phpexperts/simple-dto": "*",
+        "nstwf/extended-reflection-class": "^1.2"
     },
     "suggest": {
         "phpexperts/laravel-env-polyfill": "1.*"
@@ -40,10 +42,10 @@
         "monolog/monolog": "^2.8"
     },
     "autoload": {
-        "psr-4": { "PHPExperts\\ChatGPTSpeaker\\" : "src/" }
+        "psr-4": { "Autonomo\\AiSpeaker\\" : "src/" }
     },
     "autoload-dev": {
-        "psr-4": { "PHPExperts\\ChatGPTSpeaker\\Tests\\" : "tests/" }
+        "psr-4": { "Autonomo\\AiSpeaker\\Tests\\" : "tests/" }
     },
     "config": {
         "allow-plugins": {

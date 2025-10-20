@@ -19,22 +19,22 @@ namespace Autonomo\AiSpeaker;
 use PHPExperts\RESTSpeaker\RESTAuth;
 use PHPExperts\RESTSpeaker\RESTSpeaker;
 
-class OpenAiAuth extends RESTAuth
+class AnthropicAuth extends RESTAuth
 {
     private string $apiKey;
 
-    public function __construct(RESTSpeaker $apiClient = null)
+    public function __construct(?RESTSpeaker $apiClient = null)
     {
         parent::__construct(RESTAuth::AUTH_MODE_XAPI, $apiClient);
 
-        $this->apiKey = env('OPENAI_KEY');
+        $this->apiKey = env('ANTHROPIC_API_KEY');
     }
 
     public function generateXAPITokenOptions(): array
     {
         return [
             'headers' => [
-                'Authorization' => "Bearer $this->apiKey"
+                'x-api-key' => $this->apiKey
             ]
         ];
     }

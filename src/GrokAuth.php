@@ -19,7 +19,7 @@ namespace Autonomo\AiSpeaker;
 use PHPExperts\RESTSpeaker\RESTAuth;
 use PHPExperts\RESTSpeaker\RESTSpeaker;
 
-class OpenAiAuth extends RESTAuth
+class GrokAuth extends RESTAuth
 {
     private string $apiKey;
 
@@ -34,7 +34,7 @@ class OpenAiAuth extends RESTAuth
     {
         return [
             'headers' => [
-                'Authorization' => "Bearer $this->apiKey"
+                'Authorization' => 'Bearer ' . $this->apiKey,
             ]
         ];
     }

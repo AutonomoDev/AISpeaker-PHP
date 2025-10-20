@@ -1,9 +1,9 @@
-# ChatGPTSpeaker
+# AISpeaker
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/ba05b5ebfa6bb211619e/maintainability)](https://codeclimate.com/github/phpexpertsinc/RESTSpeaker/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ba05b5ebfa6bb211619e/test_coverage)](https://codeclimate.com/github/phpexpertsinc/RESTSpeaker/test_coverage)
 
-ChatGPTSpeaker is a PHP Experts, Inc., Project meant to ease the accessing of the OpenAI APIs.
+AISpeaker is a project of Autonomo AI, FZCO, meant to ease the accessing of the OpenAI APIs.
 
 This library uses [RESTSpeaker](https://packagist.org/package/phpexperts/rest-speaker)
 to utilize the Guzzle HTTP Client via the Composition architectural pattern.
@@ -11,7 +11,7 @@ to utilize the Guzzle HTTP Client via the Composition architectural pattern.
 You might be very interested in the projects that used by and/or adjacent to this project:
 
 * **PHP Evolver**
-    * `composer require phpexperts/evolver` 
+    * `composer require phpexperts/evolver`
     * One of only two Genetic Algorithm (GA) libraries for PHP, but very easy to use.
     * One of the few AI / Machine Learning libraries for PHP.
     * https://github.com/PHPExpertsInc/php-evolver
@@ -29,7 +29,7 @@ You might be very interested in the projects that used by and/or adjacent to thi
 Via Composer
 
 ```bash
-composer require phpexperts/chatgpt-speaker
+composer require autonomo/ai-speaker
 ```
 
 Copy `.env.example` to `.env` in your project's root directory and put in your OpenAI credentials.
@@ -44,7 +44,7 @@ Please see the [changelog](CHANGELOG.md) for more information on what has change
 By default, JSON results are returned.
 
 ```php
-    $chatGPT = new ChatGPTSpeaker();
+    $chatGPT = new AISpeaker();
 
     $prompt = <<<PROMPT
     Please create a table of the PHP major version releases along with the date of release.
@@ -101,7 +101,7 @@ Response:
 To get the same basic results as the ChatGPT user interface, do the following:
 
 ```php
-    $chatGPT = new ChatGPTSpeaker();
+    $chatGPT = new AISpeaker();
     $chatGPT->returnText();
 
     $prompt = <<<PROMPT
@@ -109,7 +109,7 @@ To get the same basic results as the ChatGPT user interface, do the following:
     PROMPT;
     $response = $chatGPT->prompt($prompt);
 
- 
+
 ```
 
 (From RESTSpeaker) To convert the RESTSpeaker API request into a `curl` CLI command, do this:
@@ -120,9 +120,9 @@ composer require --dev octoper/cuzzle
 ```php
 $curlCLI = $chatGPT->api->http->testHandler->getRecords()[0];
 
-Output: 
+Output:
 curl 'https://api.openai.com/v1/chat/completions' -A 'PHPExperts/RESTSpeaker-2.4 (PHP 8.3.3)' \
-   -H 'Content-Type: application/json'  -H 'Authorization: Bearer [redacted]' \ 
+   -H 'Content-Type: application/json'  -H 'Authorization: Bearer [redacted]' \
    -X POST  -d '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"Say 'Hello, World!'."}]}'
 ```
 
@@ -155,8 +155,8 @@ phpunit
 
 # Contributors
 
-[Theodore R. Smith](https://www.phpexperts.pro/]) <theodore@phpexperts.pro>  
-GPG Fingerprint: 4BF8 2613 1C34 87AC D28F  2AD8 EB24 A91D D612 5690  
+[Theodore R. Smith](https://www.autonomo.codes/]) <theodore.smith@autonomo.codes>
+GPG Fingerprint: 6CAC F838 454C 8912 8AA2  26DB 89DC D8F1 3BB9 33B3
 CEO: PHP Experts, Inc.
 
 ## License
@@ -167,5 +167,3 @@ Creative Commons NoDerivations v4.0: Please see the [license file](LICENSE) for 
 **YOU MAY FORK THIS PROJECT.**
 
 **YOU MAY NOT PUBLISH ANY DERIVATION of this project to either your own website or a third-party host.**
-
-
